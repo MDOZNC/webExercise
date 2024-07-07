@@ -1,0 +1,84 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "title": "SS Master 1000",
+            "type": "Leather Cricket Bat",
+            "price": 15000,
+            "productImg": ["./images/ss_master1000_1.jpeg", "./images/ss_master1000_2.jpeg"],
+            "description": "The SS Master 1000 leather cricket bat is designed for professional play, offering excellent grip and balance for a superior batting experience."
+        },
+        {
+            "id": 2,
+            "title": "Kookaburra Kahuna",
+            "type": "Hard Tennis Cricket Bat",
+            "price": 2700,
+            "productImg": ["./images/kookaburra_kahuna_1.jpeg", "./images/kookaburra_kahuna_2.jpeg"],
+            "description": "Perfect for hard tennis ball cricket, the Kookaburra Kahuna provides durability and powerful performance for recreational and semi-professional players."
+        },
+        {
+            "id": 3,
+            "title": "MRF Genius",
+            "type": "Leather Cricket Bat",
+            "price": 20000,
+            "productImg": ["./images/mrf_genius_1.jpeg", "./images/mrf_genius_2.jpeg"],
+            "description": "Used by top professionals, the MRF Genius leather cricket bat offers premium quality willow for unmatched power and control."
+        },
+        {
+            "id": 4,
+            "title": "CEAT Hitman",
+            "type": "Soft Tennis Cricket Bat",
+            "price": 1400,
+            "productImg": ["./images/ceat_hitman_1.jpeg", "./images/ceat_hitman_2.jpeg"],
+            "description": "The CEAT Hitman soft tennis cricket bat is ideal for beginners and offers great stroke play capabilities with its lightweight design."
+        },
+        {
+            "id": 5,
+            "title": "Gray-Nicolls Viper",
+            "type": "Leather Cricket Bat",
+            "price": 13000,
+            "productImg": ["./images/gray_nicolls_viper_1.jpeg", "./images/gray_nicolls_viper_2.jpeg"],
+            "description": "Gray-Nicolls Viper is a versatile cricket bat that offers exceptional performance with its balanced weight and ergonomic design."
+        },
+        {
+            "id": 6,
+            "title": "Adidas Incurza",
+            "type": "Hard Tennis Cricket Bat",
+            "price": 2200,
+            "productImg": ["./images/adidas_incurza_1.jpeg", "./images/adidas_incurza_2.jpeg"],
+            "description": "Adidas Incurza is tailored for hard tennis cricket, providing robust construction and enhanced striking power."
+        },
+        {
+            "id": 7,
+            "title": "New Balance DC 580",
+            "type": "Leather Cricket Bat",
+            "price": 17000,
+            "productImg": ["./images/new_balance_dc580_1.jpeg", "./images/new_balance_dc580_2.jpeg"],
+            "description": "Designed for professional players, the New Balance DC 580 offers superior performance with its high-grade willow and dynamic sweet spot."
+        },
+        {
+            "id": 8,
+            "title": "Spartan MC 4000",
+            "type": "Soft Tennis Cricket Bat",
+            "price": 1200,
+            "productImg": ["./images/spartan_mc4000_1.jpeg", "./images/spartan_mc4000_2.jpeg"],
+            "description": "Spartan MC 4000 is perfect for soft tennis cricket, offering lightweight handling and excellent swing control."
+        },
+        {
+            "id": 9,
+            "title": "SG Cobra Xtreme",
+            "type": "Leather Cricket Bat",
+            "price": 14000,
+            "productImg": ["./images/sg_cobra_xtreme_1.jpeg", "./images/sg_cobra_xtreme_2.jpeg"],
+            "description": "SG Cobra Xtreme is crafted for aggressive batsmen, providing a high spine and thick edges for explosive power."
+        },
+        {
+            "id": 10,
+            "title": "Puma EvoSpeed",
+            "type": "Hard Tennis Cricket Bat",
+            "price": 3000,
+            "productImg": ["./images/puma_evospeed_1.jpeg", "./images/puma_evospeed_2.jpeg"],
+            "description": "Puma EvoSpeed is designed for high-speed play in hard tennis cricket, offering a robust build and enhanced shot accuracy."
+        }
+    ]
+}
