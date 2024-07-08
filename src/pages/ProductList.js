@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../scss/style.scss';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -14,20 +13,20 @@ function ProductList({ setAllProducts, products, setProducts, filterProducts, sl
     }
 
     useEffect(() => {
-        fetch('/products.json') // Fetching data from the public directory
+        fetch('/products.json')
             .then(response => response.json())
             .then(data => {
                 setAllProducts(data.items);
                 setProducts(data.items);
             })
             .catch(error => console.error('Error fetching data:', error));
-    }, []); // Dependency array is empty, so this effect runs once after the initial render
+    }, []);
 
     return (
         <div className="product-list row">
             <section className="col-lg-3 pt-3">
                 <div className='filter-by'>
-                    <p className="filter-text">Filer By</p>
+                    <p className="filter-text">Filter By</p>
                     <div id="accordion">
                         <div id="headingOne">
                             <button className="btn pr-1">
@@ -59,10 +58,10 @@ function ProductList({ setAllProducts, products, setProducts, filterProducts, sl
                     </div>
                     <div className="slidecontainer">
                         <p className="price-range pt-3 mb-0">Price Range</p>
-                        <input type="range" min="0" max="10000" step={100} value={sliderValue} className="slider" id="myRange" onChange={handleRangeChange} />
+                        <input type="range" min="0" max="25000" step={250} value={sliderValue} className="slider" id="myRange" onChange={handleRangeChange} />
                         <p className="price-range">
                             ${sliderValue}
-                            {sliderValue === 10000 && <span>+</span>}  {/* Display '+' when sliderValue is 10000 */}
+                            {sliderValue === 25000 && <span>+</span>}
                         </p>
                     </div>
                 </div>

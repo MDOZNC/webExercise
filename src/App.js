@@ -1,10 +1,13 @@
 import {React, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductDetail from './components/ProductDetail';
+import ProductDetail from './pages/ProductDetail.js';
 import NavigationBar from './components/NavigatonBar';
-import ProductList from './components/ProductList.js';
+import ProductList from './pages/ProductList.js';
 import './scss/style.scss'
+import './scss/NavigationBar.scss'
+import './scss/ProductList.scss'
+import './scss/ProductDetail.scss'
 
 function App() {
     const [allProducts, setAllProducts] = useState([]);
@@ -15,7 +18,7 @@ function App() {
     const  filterProducts = (range, searchText) => {
         return allProducts.filter(product => {
             let matchesPrice
-            if (range<10000){
+            if (range<25000){
                 matchesPrice = parseInt(product.price) <= parseInt(range);
             }
             else{
