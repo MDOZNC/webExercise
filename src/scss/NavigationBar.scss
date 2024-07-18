@@ -1,47 +1,32 @@
-$dark-color: black;
-$light-color: #ddd;
+@import './constant';
+@import './mixin';
 
+// Styles using Mixins
 nav {
     a {
-        display: inline;
-        color: $dark-color;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-
-        &:hover {
-            background-color: $light-color;
-            color: $dark-color;
-        }
+        @include link-style($dark-color, $font-size-normal, 14px 16px);
+        @include hover-effect($light-color, $dark-color);
     }
 
     .nav-text {
-        font-size: x-small;
+        font-size: $x-small-font-size;
         font-weight: bold;
     }
 
     .menu-icon {
-        font-size: large;
-        background-color: black;
-        color: white;
+        font-size: $font-size-large;
+        background-color: $dark-color;
+        color: $light-color;
     }
 
     .form-inline {
         .form-control {
             border: none;
-            border-bottom: 2px solid orange;
-            border-radius: 0px;
-
-            &:focus {
-                box-shadow: none;
-            }
+            @include form-control-style(2px solid $btn-border-color, 0px);
         }
     }
 
     .btn {
-        &:focus {
-            box-shadow: none;
-        }
+        @include focus-effect;
     }
 }

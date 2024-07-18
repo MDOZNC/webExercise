@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductDetail from './pages/ProductDetail.js';
 import NavigationBar from './components/NavigatonBar';
 import ProductList from './pages/ProductList.js';
-import './scss/style.scss'
 import './scss/NavigationBar.scss'
 import './scss/ProductList.scss'
 import './scss/ProductDetail.scss'
@@ -15,26 +14,13 @@ function App() {
     const [sliderValue, setSliderValue] = useState(10000);
     const [searchText, setSearchText] = useState('');
 
-    const  filterProducts = (range, searchText) => {
-        return allProducts.filter(product => {
-            let matchesPrice
-            if (range<25000){
-                matchesPrice = parseInt(product.price) <= parseInt(range);
-            }
-            else{
-                matchesPrice = parseInt(product.price);
-            }
-            const matchesText = product.title.toLowerCase().includes(searchText.toLowerCase());
-            return matchesPrice && matchesText;
-        });
-    }
 
     return (
         <Router>
             <div className='main-content'>
-                <NavigationBar allProducts={allProducts} products={products} setProducts={setProducts} filterProducts={filterProducts} searchText={searchText} setSearchText={setSearchText} sliderValue={sliderValue}/>
+                <NavigationBar allProducts={allProducts} products={products} setProducts={setProducts} searchText={searchText} setSearchText={setSearchText} sliderValue={sliderValue}/>
                 <Routes>
-                    <Route path='/' element={<ProductList allProducts={allProducts} setAllProducts={setAllProducts} products={products} setProducts={setProducts} filterProducts={filterProducts} sliderValue={sliderValue} setSliderValue={setSliderValue} searchText={searchText}/>}/>
+                    <Route path='/' element={<ProductList allProducts={allProducts} setAllProducts={setAllProducts} products={products} setProducts={setProducts} sliderValue={sliderValue} setSliderValue={setSliderValue} searchText={searchText}/>}/>
                     <Route path='/product/:productId' element={<ProductDetail />}/>
                 </Routes>
             </div>

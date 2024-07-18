@@ -1,10 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function ProductList({ setAllProducts, products, setProducts, filterProducts, sliderValue, setSliderValue, searchText }) {
+function ProductList({ setAllProducts, products, setProducts, sliderValue, setSliderValue, searchText,allProducts }) {
     // const navigate = useNavigate();
+
+    const filterProducts = useCallback((range, searchText) => {
+        return allProducts.filter(product => {
+            let matchesPrice
+            if (range < 10000) {
+                matchesPrice = parseInt(product.price) <= parseInt(range);
+            }
+            else {
+                matchesPrice = true;
+            }
+            const matchesText = product.title.toLowerCase().includes(searchText.toLowerCase());
+            return matchesPrice && matchesText;
+        });
+    }, [allProducts])
+ 
+    useEffect(() => {
+        setProducts(filterProducts(sliderValue, searchText));
+    }, [sliderValue, searchText, filterProducts, setProducts])
+    
     const handleRangeChange = (e) => {
         let newSliderValue = e.target.value;
         setSliderValue(newSliderValue);
@@ -58,7 +77,7 @@ function ProductList({ setAllProducts, products, setProducts, filterProducts, sl
                     </div>
                     <div className="slidecontainer">
                         <p className="price-range pt-3 mb-0">Price Range</p>
-                        <input type="range" min="0" max="25000" step={250} value={sliderValue} className="slider" id="myRange" onChange={handleRangeChange} />
+                        <input type="range" min="0" max="25000" step={250} value={sliderValue} data-testid='price-range' className="slider" id="myRange" onChange={handleRangeChange} />
                         <p className="price-range">
                             ${sliderValue}
                             {sliderValue === 25000 && <span>+</span>}
